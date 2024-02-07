@@ -18,3 +18,7 @@ export function getCardData() {
   });
   return cardList;
 }
+
+export function getCardById(id: string): Card | undefined {
+  return card.find((c: Card) => c.id === id);
+}

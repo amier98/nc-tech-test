@@ -6,3 +6,13 @@ export const getCards = async (req: Request, res: Response) => {
 
   res.json(card).status(200);
 };
+
+export const getCardById = async (req: Request, res: Response) => {
+  const cardID = req.params.id;
+
+  const card = cardService.getCardById(cardID);
+
+  console.log(card);
+
+  res.json(card);
+};
