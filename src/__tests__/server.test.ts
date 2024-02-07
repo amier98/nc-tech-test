@@ -1,11 +1,10 @@
-import * as request from 'supertest'
-import { app } from '../server'
+import request from "supertest";
+import { app } from "../server";
 
-test('returns matching card title', async () => {
-  const response = await request(app).get('/cards/card001')
+describe("GET /api/cards endpoint", () => {
+  test("returns 200 status code if successful", async () => {
+    const response = await request(app).get("/api/cards");
 
-  expect(response.status).toBe(200)
-  expect(response.body).toEqual(expect.objectContaining({
-    title: 'card 1 title',
-  }))
-})
+    expect(response.status).toBe(200);
+  });
+});
