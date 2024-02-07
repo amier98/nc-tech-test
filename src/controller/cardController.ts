@@ -12,7 +12,9 @@ export const getCardById = async (req: Request, res: Response) => {
 
   const card = cardService.getCardById(cardID);
 
-  console.log(card);
-
-  res.json(card);
+  if (card) {
+    res.json(card).status(200);
+  } else {
+    res.status(404).json("Card does not exist");
+  }
 };
