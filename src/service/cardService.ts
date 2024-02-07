@@ -1,9 +1,9 @@
 import card from "../data/cards.json";
 import templates from "../data/templates.json";
-import { Card } from "../model/cardData";
+import { Card, CardPreview } from "../model/cardData";
 import { Template } from "../model/templateData";
 
-export function getCardData() {
+export function getCardData(): CardPreview[] {
   try {
     const cardList = card.map((card: Card) => {
       const firstPageTemplateId = card.pages[0].templateId;
@@ -21,6 +21,7 @@ export function getCardData() {
     return cardList;
   } catch (error) {
     console.log("There has been an issue", error);
+    return [];
   }
 }
 

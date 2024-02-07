@@ -10,3 +10,9 @@ export interface Page {
   title: string;
   templateId: string;
 }
+
+export interface CardPreview {
+  title: string;
+  card_id: string;
+  image_url: string;
+}
