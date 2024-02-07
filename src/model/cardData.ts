@@ -2,7 +2,7 @@ export interface Card {
   id: string;
   title: string;
   sizes: string[];
-  baseprice: number;
+  basePrice: number;
   pages: Page[];
 }
 
